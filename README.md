@@ -14,22 +14,7 @@ A privacy-first Windows browser (Chromium engine via Electron).
 - **Enhanced print** (`Ctrl+P`): live preview, Original / Clean / Reader layouts, ink saver, remove images, show link URLs, printer picker, paper/margins/scale/page range/copies/duplex, Save as PDF
 - Find in page, zoom, tabs, local history (searchable), settings page
 
-## Build on GitHub (no local setup)
-1. Create a new GitHub repository and upload everything in this folder (keep `.github/workflows/build.yml`).
-2. Open **Actions → Build Weby Browser (Windows) → Run workflow** (it also runs on every push).
-3. When it finishes, download from the run's **Artifacts**:
-   - `Weby-Browser-Installer` → `Weby-Browser-Setup-0.1.0.exe`
-   - `Weby-Browser-Portable` → `Weby-Browser-Portable-0.1.0.exe`
-4. For a public download page, push a tag like `v0.1.0`; the exes are attached to a GitHub Release.
 
-The portable build keeps all data in a `WebyData` folder beside the `.exe`.
-
-## Build locally (Windows)
-```
-npm install
-npm start          # run
-npm run dist       # installer + portable in dist/
-```
 
 ## Notes
 - The build downloads StevenBlack + AdGuard host lists (optional, adds ~100k domains). If it fails, the built-in list still ships.
