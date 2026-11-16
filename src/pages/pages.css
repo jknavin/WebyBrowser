@@ -1,0 +1,19 @@
+:root { --bg: #0f1115; --card: #171a21; --line: #272b35; --text: #e8eaf0; --muted: #8a90a0; --accent: #4f8cff; --danger: #e5484d; }
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--text); font: 14px/1.5 "Segoe UI", system-ui, sans-serif; }
+a { color: var(--accent); text-decoration: none; }
+button { font: inherit; cursor: pointer; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--text); padding: 8px 14px; }
+button:hover { border-color: #3a4050; }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+button.danger { background: rgba(229,72,77,.14); border-color: transparent; color: #ff8a8d; font-weight: 600; }
+button.danger:hover { background: var(--danger); color: #fff; }
+input[type="text"], select { padding: 9px 12px; border-radius: 9px; border: 1px solid var(--line); background: var(--card); color: var(--text); font: inherit; }
+input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 40px 24px; }
+h1 { font-size: 22px; margin: 0 0 4px; }
+.muted { color: var(--muted); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 4px 18px; margin: 16px 0; }
+.rowline { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.rowline:last-child { border-bottom: 0; }
+.rowline small { display: block; color: var(--muted); }
+.switch { accent-color: var(--accent); width: 18px; height: 18px; }

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>History</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src data:">
+<link rel="stylesheet" href="pages.css">
+<style>
+  .top { display: flex; gap: 10px; align-items: center; margin: 18px 0; }
+  #q { flex: 1; }
+  .item { display: flex; align-items: center; gap: 12px; padding: 10px 4px; border-bottom: 1px solid var(--line); }
+  .item .t { flex: 1; min-width: 0; }
+  .item .t a { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text); }
+  .item .t small { color: var(--muted); display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .item time { color: var(--muted); font-size: 12px; white-space: nowrap; }
+  .item button { padding: 3px 9px; }
+  #empty { color: var(--muted); padding: 30px 0; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>History</h1>
+  <div class="muted">Stored only on this computer. Never synced, never shared.</div>
+  <div class="top">
+    <input id="q" type="text" placeholder="Search history" autocomplete="off">
+    <button id="clr" class="danger">Clear everything</button>
+  </div>
+  <div id="list"></div>
+  <div id="empty" hidden>No history.</div>
+</div>
+<script src="history.js"></script>
+</body>
+</html>

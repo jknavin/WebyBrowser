@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>New Tab</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src data:">
+<link rel="stylesheet" href="pages.css">
+<style>
+  body { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 24px; }
+  .logo { font-size: 54px; font-weight: 700; letter-spacing: -1px; margin-bottom: 6px; }
+  .logo span { color: var(--accent); }
+  .tag { color: var(--muted); margin-bottom: 28px; }
+  form { width: min(620px, 92vw); }
+  #q { width: 100%; padding: 14px 20px; font-size: 16px; border-radius: 28px; }
+  .stats { display: flex; gap: 12px; margin-top: 34px; flex-wrap: wrap; justify-content: center; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 20px; text-align: center; min-width: 130px; }
+  .stat b { display: block; font-size: 22px; }
+  .links { margin-top: 26px; display: flex; gap: 10px; }
+  .vows { margin-top: 30px; color: var(--muted); font-size: 12px; text-align: center; }
+</style>
+</head>
+<body>
+  <div class="logo">Weby<span>.</span></div>
+  <div class="tag">Private by default. No ads. No tracking.</div>
+  <form id="f"><input id="q" type="text" placeholder="Search privately or type a web address" autofocus autocomplete="off" spellcheck="false"></form>
+  <div class="stats">
+    <div class="stat"><b id="blocked">0</b><span class="muted">blocked this session</span></div>
+    <div class="stat"><b id="engine">—</b><span class="muted">search engine</span></div>
+  </div>
+  <div class="links">
+    <button id="hist">History</button>
+    <button id="set">Settings</button>
+    <button id="clr" class="danger">Clear everything</button>
+  </div>
+  <div class="vows">No accounts · No extensions · No AI · No telemetry</div>
+  <script src="home.js"></script>
+</body>
+</html>

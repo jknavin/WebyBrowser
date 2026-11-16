@@ -1,0 +1,49 @@
+{
+  "name": "weby-browser",
+  "productName": "Weby Browser",
+  "version": "0.1.0",
+  "description": "Privacy-first browser. No ads, no tracking, no accounts, no extensions, no AI.",
+  "main": "main.js",
+  "author": "Weby",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "blocklist": "node scripts/update-blocklist.js",
+    "dist": "electron-builder --win --x64 --publish never"
+  },
+  "devDependencies": {
+    "electron": "^39.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "app.weby.browser",
+    "productName": "Weby Browser",
+    "copyright": "Weby Browser",
+    "directories": { "output": "dist", "buildResources": "build" },
+    "files": ["main.js", "package.json", "src/**/*"],
+    "asar": true,
+    "compression": "maximum",
+    "electronLanguages": ["en-US"],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ]
+    },
+    "nsis": {
+      "artifactName": "Weby-Browser-Setup-${version}.${ext}",
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Weby Browser"
+    },
+    "portable": {
+      "artifactName": "Weby-Browser-Portable-${version}.${ext}"
+    }
+  }
+}

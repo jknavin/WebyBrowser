@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Weby Browser</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src https: data:">
+<link rel="stylesheet" href="shell.css">
+</head>
+<body>
+<div id="tabbar">
+  <div id="tabs"></div>
+  <button id="newtab" title="New tab (Ctrl+T)" aria-label="New tab">+</button>
+  <div id="drag"></div>
+</div>
+
+<div id="toolbar">
+  <button id="back" title="Back (Alt+←)" aria-label="Back">←</button>
+  <button id="forward" title="Forward (Alt+→)" aria-label="Forward">→</button>
+  <button id="reload" title="Reload (Ctrl+R)" aria-label="Reload">⟳</button>
+  <button id="home" title="Home" aria-label="Home">⌂</button>
+
+  <div id="omni">
+    <span id="lock" title="Connection"></span>
+    <input id="url" type="text" spellcheck="false" autocomplete="off" placeholder="Search or type a web address">
+  </div>
+
+  <button id="shield" class="pill" title="Ads &amp; trackers blocked on this page">🛡 <span id="blocked">0</span></button>
+  <button id="ytbtn" title="YouTube focus tool (Ctrl+Shift+Y)" aria-label="YouTube focus tool">▶ Focus</button>
+  <button id="printbtn" title="Print (Ctrl+P)" aria-label="Print">🖶</button>
+  <button id="clearall" title="Clear history, cookies, cache and all site data (Ctrl+Shift+Del)">Clear all</button>
+  <button id="menu" title="Menu" aria-label="Menu">⋯</button>
+</div>
+
+<div id="findbar" hidden>
+  <input id="findinput" type="text" placeholder="Find in page" spellcheck="false">
+  <button id="findprev" aria-label="Previous">↑</button>
+  <button id="findnext" aria-label="Next">↓</button>
+  <button id="findclose" aria-label="Close find">✕</button>
+</div>
+
+<aside id="ytpanel" hidden>
+  <header><strong>YouTube focus</strong><button id="ytclose" aria-label="Close">✕</button></header>
+  <p class="note">Ads are always removed. Choose what else to hide.</p>
+  <button id="ytfocus" class="preset">Enable full focus mode</button>
+  <label><input type="checkbox" data-yt="hideShorts"> Hide Shorts</label>
+  <label><input type="checkbox" data-yt="hideHomeFeed"> Hide home feed</label>
+  <label><input type="checkbox" data-yt="hideRelated"> Hide recommended videos</label>
+  <label><input type="checkbox" data-yt="hideComments"> Hide comments</label>
+  <label><input type="checkbox" data-yt="hideEndCards"> Hide end cards &amp; pop-ups</label>
+  <label><input type="checkbox" data-yt="hideExplore"> Hide Trending / Explore</label>
+  <label><input type="checkbox" data-yt="noAutoplay"> Turn autoplay off</label>
+  <label><input type="checkbox" data-yt="grayscale"> Grayscale (less tempting)</label>
+</aside>
+
+<div id="toast" hidden></div>
+<script src="shell.js"></script>
+</body>
+</html>
